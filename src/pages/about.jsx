@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Footer } from 'src/components/Footer'
 import styles from 'src/styles/Home.module.css'
-import { Main } from 'src/components/main'
+import { Main } from 'src/components/Main'
 import { Header } from 'src/components/Header'
 export default function Home() {
   return (
