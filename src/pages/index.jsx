@@ -10,7 +10,7 @@ import { useCallback } from "react";
 export default function Home() {
   const foo = 1;
   const clickHandle = useCallback((e) => {
-    console.log(e.target.href);
+    console.log(e.target);
     e.preventDefault();
     alert(foo);
   }, []);
@@ -20,9 +20,9 @@ export default function Home() {
         <title>Index Page</title>
       </Head>
       <Header />
-      <a href="/about" onClick={clickHandle}>
+      <button onClick={clickHandle}>
         ボタン
-      </a>
+      </button>
       <Main page="index" />
 
       <Footer />
