@@ -5,21 +5,21 @@ import { Links } from "src/components/Links";
 import { Headline } from "src/components/Headline";
 import { Main } from "src/components/Main";
 import { Header } from "src/components/Header";
-import { useCallback, useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function Home() {
-  // const foo = 1;
-  // const clickHandle = useCallback((e) => {
-  //   console.log(e.target);
-  //   e.preventDefault();
-  //   alert(foo);
-  // }, []);
+  const [count, setCount] = useState(200);
+  const clickHandle = (e) => {
+    console.log(count);
+    setCount((count) => count + 1);
+    setCount((count) => count + 1);
+  };
   useEffect(() => {
     document.body.style.backgroundColor = "lightblue";
 
-    return ()=>{
+    return () => {
       document.body.style.backgroundColor = "";
-    }
+    };
   }, []);
   return (
     <div className={styles.container}>
@@ -27,7 +27,8 @@ export default function Home() {
         <title>Index Page</title>
       </Head>
       <Header />
-      {/* <button onClick={clickHandle}>ボタン</button> */}
+      <h1>{count}</h1>
+      <button onClick={clickHandle}>ボタン</button>
       <Main page="index" />
 
       <Footer />
