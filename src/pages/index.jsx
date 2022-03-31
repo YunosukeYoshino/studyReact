@@ -5,15 +5,19 @@ import { Links } from "src/components/Links";
 import { Headline } from "src/components/Headline";
 import { Main } from "src/components/Main";
 import { Header } from "src/components/Header";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 
 export default function Home() {
   const [count, setCount] = useState(200);
-  const clickHandle = (e) => {
-    console.log(count);
-    setCount((count) => count + 1);
-    setCount((count) => count + 1);
-  };
+  const clickHandle = useCallback(
+    (e) => {
+      console.log(count);
+      if (count < 204) {
+        setCount((count) => count + 1);
+      }
+    },
+    [count]
+  );
   useEffect(() => {
     document.body.style.backgroundColor = "lightblue";
 
