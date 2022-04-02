@@ -17,11 +17,12 @@ export default function Home() {
     (e) => {
       console.log(count);
       if (count < 204) {
-        setCount((count) => count + 1);
+        setCount((prevCount) => prevCount + 1);
       }
     },
     [count]
   );
+
   const handleChange = useCallback((e) => {
     if (e.target.value.length > 5) {
       alert("５文字以内にしてください");
@@ -30,9 +31,9 @@ export default function Home() {
     setText(e.target.value.trim());
   }, []);
 
-  const handleDisplay =useCallback(() => {
-    setIsShow((isShow) => !isShow)
-  },[]);
+  const handleDisplay = useCallback(() => {
+    setIsShow((prevIsShow) => !prevIsShow);
+  }, []);
 
   useEffect(() => {
     document.body.style.backgroundColor = "lightblue";
