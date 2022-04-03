@@ -7,7 +7,7 @@ function MyApp({ Component, pageProps }) {
       <Head>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Component {...pageProps} />
+      <Component {...pageProps} foo={aaa}/>
     </div>
   );
 }
