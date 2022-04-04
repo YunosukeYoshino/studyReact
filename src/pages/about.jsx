@@ -13,6 +13,7 @@ export default function About({
   array,
   handleChange,
   handleAd,
+  doubleCounter
 }) {
   return (
     <div className={styles.container}>
@@ -20,7 +21,7 @@ export default function About({
         <title>Create Next App</title>
       </Head>
       <Header />
-      {isShow ? <h1>{count}</h1> : null}
+      {isShow ? <h1>{doubleCounter}</h1> : null}
       <button onClick={clickHandle}>ボタン</button>
       <button onClick={handleDisplay}>{isShow ? "非表示" : "表示"}</button>
       <input type="text" value={text} onChange={handleChange} />
